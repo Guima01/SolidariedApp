@@ -1,28 +1,32 @@
 import React, { useState} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Animated } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Animated,KeyboardAvoidingView} from 'react-native';
 import { Button, TextInput} from 'react-native-paper';
 import { globalStyles , inputTheme} from '../../styles/global';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack'
+
+
 import api from '../../services/api'
 
-export default function Login({ navigation, route }) {
+export default function Cadastro({ navigation, route }) {
 
     const [logoStats] = useState(new Animated.ValueXY({ x: 230, y: 230 }));
     const [tituloApp] = useState(new Animated.ValueXY({ x: 300, y: 50 }));
 
-    const [dadosLogin, setDadosLogin] = useState({
-        username: "",
-        password: ""
+    const [dadosCadastro, setDadosCadastros] = useState({
+        name: "",
+        email:"",
+        password:"",
+        passwordConfirm:""
     });
 
-    function logIn(){
-        if(dadosLogin.username == "tata" && dadosLogin.password == "fota")
+    function cadastros(){
+        if( dadosCadastro.username == "tata" && 
+            dadosCadastro.email == "tata@tama.com" &&
+            dadosCadastro.password == "fota" &&
+            dadosCadastro.passwordConfirm == "fota")
             console.log("Credenciais corretas , logando...")
       //navigation.navigate('')
     }
 
-  
 
     return(
         
@@ -33,45 +37,53 @@ export default function Login({ navigation, route }) {
                     <Animated.Image style={{ width: tituloApp.x, height: tituloApp.y, alignSelf: 'center', }}
                         source={require('../../../assets/tituloApp.png')}/>
                 </View>
-
+            <KeyboardAvoidingView behavior="position" >
                 <View style={globalStyles.campoDados}>
                     <TextInput style={globalStyles.inputs}
-                        label='Login'
+                        label='Nome'
                         mode='outlined'
                         theme={inputTheme}
                         autoCapitalize='none'
-                        onChangeText={value => setDadosLogin({ ...dadosLogin, username: value })}
-                        value={dadosLogin.username}
+                        onChangeText={value => setDadosCadastros({ ...dadosCadastro, username: value })}
+                        value={dadosCadastro.username}
+                    />
+                    <TextInput style={globalStyles.inputs}
+                        label='Email'
+                        mode='outlined'
+                        theme={inputTheme}
+                        autoCapitalize='none'
+                        onChangeText={value => setDadosCadastros({ ...dadosCadastro, email: value })}
+                        value={dadosCadastro.email}
                     />
                     <TextInput style={globalStyles.inputs}
                         secureTextEntry = {true}
                         label='Senha'
                         mode='outlined'
                         theme={inputTheme}
-                        onChangeText={value => setDadosLogin({ ...dadosLogin, password: value })}
-                        value={dadosLogin.password}
+                        onChangeText={value => setDadosCadastros({ ...dadosCadastro, password: value })}
+                        value={dadosCadastro.password}
+                    />
+                    <TextInput style={globalStyles.inputs}
+                        secureTextEntry = {true}
+                        label='Confirmar Senha'
+                        mode='outlined'
+                        theme={inputTheme}
+                        onChangeText={value => setDadosCadastros({ ...dadosCadastro, passwordConfirm: value })}
+                        value={dadosCadastro.passwordConfirm}
                     />
                 </View>
-
+            </KeyboardAvoidingView>
                 <View style={globalStyles.campoBotoes}>
-                    <Button
-                        style={globalStyles.botao}
-                        theme={inputTheme} 
-                        mode="contained"
-                        labelStyle={{ width: '100%', fontSize: 15, padding: 3 }}
-                        onPress={ () => logIn()}
-                        >
-                        <Text>Login</Text>
-                    </Button>
+            
 
                     <Button
                         style={globalStyles.botao}
                         theme={inputTheme} 
                         mode="contained"
                         labelStyle={{ width: '100%', fontSize: 15, padding: 3 }}
-                        onPress={()=>navigation.navigate('Cadastro')}
+                        onPress={()=>cadastros()}
                         >
-                        <Text >Cadastrar</Text>
+                        <Text>Cadastrar</Text>
                     </Button>
                 </View>
 
