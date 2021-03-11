@@ -1,9 +1,7 @@
 import React, { useState} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Animated } from 'react-native';
+import { Text, View, Animated } from 'react-native';
 import { Button, TextInput} from 'react-native-paper';
 import { globalStyles , inputTheme} from '../../styles/global';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import api from '../../services/api'
 
@@ -20,7 +18,7 @@ export default function Login({ navigation, route }) {
     function logIn(){
         if(dadosLogin.username == "tata" && dadosLogin.password == "fota")
             console.log("Credenciais corretas , logando...")
-      //navigation.navigate('')
+      navigation.navigate('Tela Inicial')
     }
 
   

@@ -33,6 +33,14 @@ export const globalStyles = StyleSheet.create({
         borderRadius: 5,
         
       },
+    botaow: {
+        alignSelf:"center",
+        borderWidth: 1,
+        marginBottom: 15,
+        borderRadius: 50,
+        margin:15,
+        
+      },
 
 }); 
 
