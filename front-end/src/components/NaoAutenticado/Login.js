@@ -1,10 +1,7 @@
-import React, { useState} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Animated } from 'react-native';
-import { Button, TextInput} from 'react-native-paper';
-import { globalStyles , inputTheme} from '../../styles/global';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack'
-import api from '../../services/api'
+import React, { useState } from 'react';
+import { Animated, Text, View } from 'react-native';
+import { Button, TextInput } from 'react-native-paper';
+import { globalStyles, inputTheme } from '../../styles/global';
 
 export default function Login({ navigation, route }) {
 
@@ -19,7 +16,7 @@ export default function Login({ navigation, route }) {
     function logIn(){
         if(dadosLogin.username == "tata" && dadosLogin.password == "fota")
             console.log("Credenciais corretas , logando...")
-      //navigation.navigate('')
+      navigation.navigate('Tela Inicial')
     }
 
   
