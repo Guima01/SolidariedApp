@@ -4,12 +4,13 @@ import { Button, TextInput} from 'react-native-paper';
 import { globalStyles , inputTheme} from '../../styles/global';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import api from '../../services/api'
 
 export default function Login({ navigation, route }) {
 
-    const [logoStats] = useState(new Animated.ValueXY({ x: 230, y: 230 }));
-    const [tituloApp] = useState(new Animated.ValueXY({ x: 300, y: 50 }));
+    const [logoStats] = useState(new Animated.ValueXY({ x: 170, y: 170 }));
+    const [tituloApp] = useState(new Animated.ValueXY({ x: 260, y: 40 }));
 
     const [dadosLogin, setDadosLogin] = useState({
         username: "",
@@ -25,7 +26,7 @@ export default function Login({ navigation, route }) {
   
 
     return(
-        
+        <KeyboardAwareScrollView style={globalStyles.containerCompleto}>
             <View style={globalStyles.containerCompleto}>
                 <View style={globalStyles.logoView}>
                     <Animated.Image style={{ width: logoStats.x, height: logoStats.y, alignSelf: 'center'}}
@@ -33,7 +34,7 @@ export default function Login({ navigation, route }) {
                     <Animated.Image style={{ width: tituloApp.x, height: tituloApp.y, alignSelf: 'center', }}
                         source={require('../../../assets/tituloApp.png')}/>
                 </View>
-
+                
                 <View style={globalStyles.campoDados}>
                     <TextInput style={globalStyles.inputs}
                         label='Login'
@@ -76,6 +77,7 @@ export default function Login({ navigation, route }) {
                 </View>
 
             </View>
+            </KeyboardAwareScrollView>
         
 
     );

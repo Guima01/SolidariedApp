@@ -22,8 +22,9 @@ export const globalStyles = StyleSheet.create({
         margin:25
     },
     inputs : {
+        //height: 50,
         marginBottom: '1%',
-        marginTop:20
+        marginTop:10
     },
     botao: {
         alignSelf:"center",

@@ -8,8 +8,8 @@ import api from '../../services/api'
 
 export default function Cadastro({ navigation, route }) {
 
-    const [logoStats] = useState(new Animated.ValueXY({ x: 230, y: 230 }));
-    const [tituloApp] = useState(new Animated.ValueXY({ x: 300, y: 50 }));
+    const [logoStats] = useState(new Animated.ValueXY({ x: 170, y: 170 }));
+    const [tituloApp] = useState(new Animated.ValueXY({ x: 260, y: 40 }));
 
     const [dadosCadastro, setDadosCadastros] = useState({
         name: "",
