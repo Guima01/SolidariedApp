@@ -15,10 +15,22 @@ export default function Login({ navigation, route }) {
         password: ""
     });
 
-    function logIn(){
-        if(dadosLogin.username == "tata" && dadosLogin.password == "fota")
-            console.log("Credenciais corretas , logando...")
-      navigation.navigate('Tela Inicial')
+    async function logIn(){
+
+        try {
+
+            const responseUser = await api.get("/users", dadosLogin);
+            
+            const existe = responseUser.data.find( user => user.nome === dadosLogin.username && user.senha === dadosLogin.password );
+            if(existe != undefined){
+                console.log(existe)
+                navigation.navigate("Tela Inicial");
+            }
+            else alert("Usuario ou senha incorretos");
+        } catch (responseUser) {
+            alert("Não foi possivel efetuar o cadastro. Tente Novamente." + JSON.stringify(responseUser.data));
+        }
+        
     }
 
   

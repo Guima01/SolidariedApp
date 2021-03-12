@@ -3,15 +3,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Login from './src/components/NaoAutenticado/Login'
 import Cadastro from './src/components/NaoAutenticado/Cadastro'
-import TelaInicial from './src/components/NaoAutenticado/Autenticado/TelaInicial'
-import PerfilUser from './src/components/NaoAutenticado/Autenticado/PerfilUser'
-import PerfiEntidade from './src/components/NaoAutenticado/Autenticado/PerfilEntidade'
-import Doacao from './src/components/NaoAutenticado/Autenticado/Doacao'
+import TelaInicial from './src/components/Autenticado/TelaInicial'
+import PerfilUser from './src/components/Autenticado/PerfilUser'
+import PerfiEntidade from './src/components/Autenticado/PerfilEntidade'
+import Doacao from './src/components/Autenticado/Doacao'
 const Stack = createStackNavigator();
 
 function MyStack() {
   return (
     <Stack.Navigator>
+      
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Cadastro" component={Cadastro} />
       <Stack.Screen name="Tela Inicial" component={TelaInicial}/>

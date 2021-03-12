@@ -11,26 +11,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.crm.model.User;
-import com.example.crm.repository.UserRepository;
+import com.example.crm.model.PessoaFisica;
+import com.example.crm.repository.PessoaFisicaRepository;
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
-	
+@RequestMapping("/pessoaFisica")
+public class PessoaFisicaController {
+
 	@Autowired
-	private UserRepository userRepository;
+	private PessoaFisicaRepository pessoaFisicaRepository;
 	
 	@GetMapping
-	public List<User> listar() {
-		 return userRepository.findAll();
+	public List<PessoaFisica> listar() {
+		 return pessoaFisicaRepository.findAll();
 	}
+	
+	
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public User adicionar(@RequestBody User user) {
-		return userRepository.save(user);
+	public PessoaFisica adicionar(@RequestBody PessoaFisica pessoaFisica) {
+		return pessoaFisicaRepository.save(pessoaFisica);
 	}
-	
-	
-} 
+}

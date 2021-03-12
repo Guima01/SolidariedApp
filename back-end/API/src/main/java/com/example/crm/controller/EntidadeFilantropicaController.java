@@ -11,26 +11,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.crm.model.User;
-import com.example.crm.repository.UserRepository;
+import com.example.crm.model.EntidadeFilantropica;
+import com.example.crm.repository.EntidadeFilantropicaRepository;
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
-	
+@RequestMapping("/entidadeFilantropica")
+public class EntidadeFilantropicaController {
+
 	@Autowired
-	private UserRepository userRepository;
+	private EntidadeFilantropicaRepository entidadeFilantropicaRepository;
 	
 	@GetMapping
-	public List<User> listar() {
-		 return userRepository.findAll();
+	public List<EntidadeFilantropica> listar() {
+		 return entidadeFilantropicaRepository.findAll();
 	}
+	
+	
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public User adicionar(@RequestBody User user) {
-		return userRepository.save(user);
+	public EntidadeFilantropica adicionar(@RequestBody EntidadeFilantropica entidadeFilantropica) {
+		return entidadeFilantropicaRepository.save(entidadeFilantropica);
 	}
-	
-	
-} 
+}

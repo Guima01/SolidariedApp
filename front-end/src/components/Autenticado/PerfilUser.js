@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Icon2 from 'react-native-vector-icons/Fontisto';
 import Icon3 from 'react-native-vector-icons/Entypo';
 import { Button, TextInput,Card,List,Divider } from 'react-native-paper';
-import { globalStyles, inputTheme } from '../../../styles/global';
+import { globalStyles, inputTheme } from '../../styles/global';
 
 
 export default function PerfilUser({ navigation, route }) {
@@ -23,11 +23,11 @@ export default function PerfilUser({ navigation, route }) {
                 <View style={styles.profileHeaderView}>
 
                     <View>
-                        <Image style={styles.profileBanner} source={require('../../../../assets/bannerUser.jpg')} />
+                        <Image style={styles.profileBanner} source={require('../../../assets/bannerUser.jpg')} />
                     </View>
 
                     <View style={styles.avatarImage}>
-                        <Image style={{width: 150,height: 150,marginTop: '15%', backgroundColor: '#fff',borderRadius:999999 }} source={require('../../../../assets/tia.jpg')} />
+                        <Image style={{width: 150,height: 150,marginTop: '15%', backgroundColor: '#fff',borderRadius:999999 }} source={require('../../../assets/tia.jpg')} />
                     </View>
 
                     </View>
