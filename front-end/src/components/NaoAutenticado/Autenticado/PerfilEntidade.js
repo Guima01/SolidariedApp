@@ -42,17 +42,13 @@ export default function PerfilEntidade({ navigation, route }) {
                             title="Informações Básicas"
                         />
                         <List.Item
-                            //style={globalStyles.standardListItem}
-                            //title="Nome"
-                            //description="Marco Antonio"
+                           
                             left={props => <Text style={styles.standardListItemLeftText}>Nome</Text>}
                             right={props => <Text style={{marginRight:145,alignSelf: 'center',fontSize: 13,color: '#909090'}}>Associação Central da Solidariedade</Text>}
                         />
                         <Divider />
                         <List.Item
-                            //style={globalStyles.standardListItem}
-                            // title="Idade"
-                            // description="37"
+                         
                             left={props => <Text style={styles.standardListItemLeftText}>O que somos?</Text>}
                             right={props => <Text style={{marginRight:145,alignSelf: 'center',fontSize: 15,color: '#909090'}}>É uma entidade filantrópica sem fins lucrativos que possui uma equipe composta por neurologista, pediatra, entre outros profissionais.
                             </Text>}
@@ -91,7 +87,7 @@ export default function PerfilEntidade({ navigation, route }) {
                         theme={inputTheme} 
                         mode="contained"
                         labelStyle={{ width: '100%', fontSize: 15, padding: 3 }}
-                        onPress={()=>navigation.navigate('Perfil Usuario')}
+                        onPress={()=>navigation.navigate('Doacao')}
                         >
                         <Text >Doar</Text>
                     </Button>

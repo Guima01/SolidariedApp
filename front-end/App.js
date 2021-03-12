@@ -6,7 +6,7 @@ import Cadastro from './src/components/NaoAutenticado/Cadastro'
 import TelaInicial from './src/components/NaoAutenticado/Autenticado/TelaInicial'
 import PerfilUser from './src/components/NaoAutenticado/Autenticado/PerfilUser'
 import PerfiEntidade from './src/components/NaoAutenticado/Autenticado/PerfilEntidade'
-
+import Doacao from './src/components/NaoAutenticado/Autenticado/Doacao'
 const Stack = createStackNavigator();
 
 function MyStack() {
@@ -17,6 +17,7 @@ function MyStack() {
       <Stack.Screen name="Tela Inicial" component={TelaInicial}/>
       <Stack.Screen name="Perfil Usuario" component={PerfilUser}/>
       <Stack.Screen name='Perfil Entidade' component={PerfiEntidade}/>
+      <Stack.Screen name='Doacao' component={Doacao}/>
      
   
     </Stack.Navigator>

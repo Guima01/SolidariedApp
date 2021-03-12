@@ -3,6 +3,7 @@ import { Animated, Text, View } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { globalStyles, inputTheme } from '../../styles/global';
 
+
 export default function Login({ navigation, route }) {
 
     const [logoStats] = useState(new Animated.ValueXY({ x: 230, y: 230 }));
